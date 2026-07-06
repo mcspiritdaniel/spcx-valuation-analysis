@@ -1,6 +1,6 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-export default function SegmentChart({ primaryLabel, primaryData, margin }) {
+export default function SegmentChart({ primaryLabel, primaryData, margin, segment }) {
   const years = Array.from({ length: 10 }, (_, i) => 2026 + i);
   const primaryKey = primaryLabel.toLowerCase();
   const data = years.map((year, i) => ({
@@ -13,10 +13,13 @@ export default function SegmentChart({ primaryLabel, primaryData, margin }) {
     return value.toLocaleString('en-US', { maximumFractionDigits: 0 });
   };
 
+  const leftMargin = segment === 'Expansion' ? 50 : 35;
+
+
   return (
     <div className="segment-chart">
       <ResponsiveContainer width="100%" height={280}>
-        <LineChart data={data} margin={{ top: 5, right: 20, left: 35, bottom: 5 }}>
+        <LineChart data={data} margin={{ top: 5, right: 20, left: leftMargin, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
           <XAxis
             dataKey="year"
@@ -56,6 +59,7 @@ export default function SegmentChart({ primaryLabel, primaryData, margin }) {
             yAxisId="left"
             type="monotone"
             dataKey={primaryKey}
+            name={primaryLabel}
             stroke="var(--navy)"
             strokeWidth={2}
             dot={false}
@@ -65,6 +69,7 @@ export default function SegmentChart({ primaryLabel, primaryData, margin }) {
             yAxisId="right"
             type="monotone"
             dataKey="margin"
+            name="Operating Margin"
             stroke="var(--gold)"
             strokeWidth={2}
             dot={false}

@@ -12,7 +12,9 @@
       "Bash(git commit -m 'Restore '\\\\''Launches'\\\\'' label on chart primary Y-axis for visual balance *)",
       "Bash(git push *)",
       "Bash(git commit -m 'Fix chart margin to display '\\\\''Launches'\\\\'' Y-axis label *)",
-      "Bash(git commit -m 'Add dynamic charts to all segment cards *)"
+      "Bash(git commit -m 'Add dynamic charts to all segment cards *)",
+      "Bash(git commit -m 'Format primary Y-axis values with commas for readability *)",
+      "Bash(git commit -m 'Update charts and footer formatting *)"
     ]
   }
 }

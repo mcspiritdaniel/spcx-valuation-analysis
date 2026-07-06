@@ -436,19 +436,19 @@ export default function App() {
                 ))}
 
                 {panel.segment === 'Space' && (
-                  <SegmentChart primaryLabel="Launches" primaryData={operating.space.launches} margin={operating.space.margin} />
+                  <SegmentChart segment="Space" primaryLabel="Launches" primaryData={operating.space.launches} margin={operating.space.margin} />
                 )}
 
                 {panel.segment === 'Connectivity' && (
-                  <SegmentChart primaryLabel="Subscribers" primaryData={operating.connectivity.subscribers} margin={operating.connectivity.margin} />
+                  <SegmentChart segment="Connectivity" primaryLabel="Subscribers" primaryData={operating.connectivity.subscribers} margin={operating.connectivity.margin} />
                 )}
 
                 {panel.segment === 'AI' && (
-                  <SegmentChart primaryLabel="Megawatts" primaryData={operating.ai.capacity} margin={operating.ai.margin} />
+                  <SegmentChart segment="AI" primaryLabel="Megawatts" primaryData={operating.ai.capacity} margin={operating.ai.margin} />
                 )}
 
                 {panel.segment === 'Expansion' && (
-                  <SegmentChart primaryLabel="Revenue" primaryData={operating.expansion.revenue} margin={operating.expansion.margin} />
+                  <SegmentChart segment="Expansion" primaryLabel="Revenue" primaryData={operating.expansion.revenue} margin={operating.expansion.margin} />
                 )}
               </div>
             );
@@ -540,7 +540,6 @@ export default function App() {
       <footer className="app-footer">
         <div className="app-footer__left">
           <a href="https://www.linkedin.com/in/danmcspirit" target="_blank" rel="noreferrer">Dan McSpirit &#8599;</a>
-          <span>&middot; Otherwhere Capital</span>
         </div>
         <span className="app-footer__center">For informational purposes only &middot; Not investment advice</span>
         <span className="app-footer__right">July 2025</span>
