@@ -11,7 +11,7 @@ export default function SegmentChart({ launches, margin }) {
   return (
     <div className="segment-chart">
       <ResponsiveContainer width="100%" height={280}>
-        <LineChart data={data} margin={{ top: 5, right: 20, left: -20, bottom: 5 }}>
+        <LineChart data={data} margin={{ top: 5, right: 20, left: 35, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
           <XAxis
             dataKey="year"
