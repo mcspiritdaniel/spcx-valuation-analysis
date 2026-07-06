@@ -82,9 +82,12 @@ export default function SegmentChart({ primaryLabel, primaryData, margin, segmen
               fontSize: '12px',
             }}
             formatter={(value, name) => {
-              if (name === primaryKey) return [value, primaryLabel];
-              if (name === 'margin') return [`${value}%`, 'Operating Margin'];
-              return value;
+              const formattedValue = typeof value === 'number'
+                ? value.toLocaleString('en-US', { maximumFractionDigits: 2 })
+                : value;
+              if (name === primaryKey) return [formattedValue, primaryLabel];
+              if (name === 'margin') return [`${formattedValue}%`, 'Operating Margin'];
+              return formattedValue;
             }}
           />
           <Legend content={CustomLegend} wrapperStyle={{ fontSize: '12px' }} />
