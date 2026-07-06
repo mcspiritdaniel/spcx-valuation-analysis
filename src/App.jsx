@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import SliderControl from './components/SliderControl';
+import SegmentChart from './components/SegmentChart';
 import { useValuationEngine } from './hooks/useValuationEngine';
 import { formatSliderValue, getSliderStep } from './utils/schema';
 import unlockSchedule from '../unlock_schedule.json';
@@ -433,6 +434,10 @@ export default function App() {
                     )}
                   </div>
                 ))}
+
+                {panel.segment === 'Space' && (
+                  <SegmentChart launches={operating.space.launches} margin={operating.space.margin} />
+                )}
               </div>
             );
           })}

@@ -7,7 +7,8 @@
       "Bash(grep -n \"const valuation = runValuation\\\\|return { operating, investment, adjustments, wacc, ev, valuation }\" /Users/danmcspirit/Documents/spcx-valuation-app/src/engine/operating_engine.mjs)",
       "Bash(git init *)",
       "Bash(git add *)",
-      "Bash(git commit -m 'Initial commit: SPCX valuation app *)"
+      "Bash(git commit -m 'Initial commit: SPCX valuation app *)",
+      "Bash(npm install *)"
     ]
   }
 }

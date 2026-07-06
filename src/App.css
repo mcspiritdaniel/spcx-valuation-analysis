@@ -588,6 +588,12 @@ a {
   margin-bottom: 3px;
 }
 
+.segment-chart {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
 .segment-scenario-cell__value {
   font-family: var(--font-mono);
   font-size: 11px;
