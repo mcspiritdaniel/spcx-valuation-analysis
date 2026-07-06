@@ -1,11 +1,11 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 export default function SegmentChart({ launches, margin }) {
-  const years = Array.from({ length: 11 }, (_, i) => 2025 + i);
+  const years = Array.from({ length: 10 }, (_, i) => 2026 + i);
   const data = years.map((year, i) => ({
     year,
-    launches: Math.round(launches[i]),
-    margin: Math.round(margin[i] * 10000) / 100,
+    launches: Math.round(launches[i + 1]),
+    margin: Math.round(margin[i + 1] * 10000) / 100,
   }));
 
   return (
