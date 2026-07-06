@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(lsof -nP -iTCP -sTCP:LISTEN)",
+      "Bash(npm run *)",
+      "Bash(node -e ' *)",
+      "Bash(grep -n \"const valuation = runValuation\\\\|return { operating, investment, adjustments, wacc, ev, valuation }\" /Users/danmcspirit/Documents/spcx-valuation-app/src/engine/operating_engine.mjs)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'Initial commit: SPCX valuation app *)"
+    ]
+  }
+}

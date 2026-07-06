@@ -1,0 +1,81 @@
+{
+  "source": "SPCX_McSpirit_Model_v10.xlsx / Valuation!A69:D86 (static, not slider-dependent)",
+  "schedule": [
+    {
+      "event": "IPO close (free float, including over-allotment)",
+      "cumulativeShares": 638.89
+    },
+    {
+      "event": "First earnings - 180-day early release",
+      "cumulativeShares": 1550.39
+    },
+    {
+      "event": "+Additional if price >= +30%",
+      "cumulativeShares": 2006.19
+    },
+    {
+      "event": "70th day (7%)",
+      "cumulativeShares": 2325.19
+    },
+    {
+      "event": "90th day (7%)",
+      "cumulativeShares": 2644.19
+    },
+    {
+      "event": "91st day - affiliates (180-day lock-up)",
+      "cumulativeShares": 2703.29
+    },
+    {
+      "event": "105th day (7%)",
+      "cumulativeShares": 3031.69
+    },
+    {
+      "event": "120th day (7%)",
+      "cumulativeShares": 3360.09
+    },
+    {
+      "event": "135th day (7%)",
+      "cumulativeShares": 3688.49
+    },
+    {
+      "event": "Q3'26 earnings (28%)",
+      "cumulativeShares": 4988.49
+    },
+    {
+      "event": "180th day",
+      "cumulativeShares": 5316.89
+    },
+    {
+      "event": "Q4'26 earnings (extended, 20%)",
+      "cumulativeShares": 5668.79
+    },
+    {
+      "event": "280th day (extended, 10%)",
+      "cumulativeShares": 5844.79
+    },
+    {
+      "event": "Q1'27 earnings (extended, 20%)",
+      "cumulativeShares": 6196.69
+    },
+    {
+      "event": "340th day (extended, 10%)",
+      "cumulativeShares": 6372.69
+    },
+    {
+      "event": "366th day (extended, 20% - remainder, excl. Musk)",
+      "cumulativeShares": 6724.59
+    },
+    {
+      "event": "366th day - Musk (all)",
+      "cumulativeShares": 13124.59
+    },
+    {
+      "event": "Q2'27 earnings (remainder)",
+      "cumulativeShares": 13476.49
+    }
+  ],
+  "footnotes": [
+    "Approximately 7.8B shares, including 100% of Musk's holdings, remain locked beyond one year (~60% of shares outstanding); Musk's unlock (6/12/27) carries no early-release provision. The cumulative total above (102.4% of shares outstanding) exceeds 100% because the 424B4's lock-up table discloses 'up to X million shares' under alternative, conditional scenarios. It is a filing-disclosure convention, not a reconciliation error.",
+    "The Unlock Schedule tracks only Class A and Class B common stock (13,159.2M shares) as post-IPO lock-up agreements expire. It excludes the Anysphere and EchoStar/Spectrum share issuances (separate M&A-specific lock-up terms) and excludes unexercised options/unvested RSUs (not outstanding shares). The 14,461.4M diluted share count used in the per-share valuation includes all of these items which is why the two totals differ."
+  ]
+}
