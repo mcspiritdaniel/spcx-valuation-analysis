@@ -461,17 +461,10 @@ a {
 
 .segment-col {
   border-right: 1px solid var(--border);
-  padding: 18px 28px 20px 0;
+  padding: 18px 14px 20px 14px;
   display: flex;
   flex-direction: column;
-}
-
-.segment-col:first-child {
-  padding-left: 0;
-}
-
-.segment-col:not(:first-child) {
-  padding-left: 28px;
+  min-width: 0;
 }
 
 .segment-col:last-child {
