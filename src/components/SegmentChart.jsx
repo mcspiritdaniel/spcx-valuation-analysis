@@ -9,6 +9,10 @@ export default function SegmentChart({ primaryLabel, primaryData, margin }) {
     margin: Math.round(margin[i + 1] * 10000) / 100,
   }));
 
+  const formatAxisValue = (value) => {
+    return value.toLocaleString('en-US', { maximumFractionDigits: 0 });
+  };
+
   return (
     <div className="segment-chart">
       <ResponsiveContainer width="100%" height={280}>
@@ -23,6 +27,7 @@ export default function SegmentChart({ primaryLabel, primaryData, margin }) {
             yAxisId="left"
             tick={{ fontSize: 11 }}
             stroke="var(--navy-light)"
+            tickFormatter={formatAxisValue}
             label={{ value: primaryLabel, angle: -90, position: 'insideLeft', offset: 5, fontSize: 11 }}
           />
           <YAxis
