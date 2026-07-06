@@ -1,10 +1,11 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-export default function SegmentChart({ launches, margin }) {
+export default function SegmentChart({ primaryLabel, primaryData, margin }) {
   const years = Array.from({ length: 10 }, (_, i) => 2026 + i);
+  const primaryKey = primaryLabel.toLowerCase();
   const data = years.map((year, i) => ({
     year,
-    launches: Math.round(launches[i + 1]),
+    [primaryKey]: Math.round(primaryData[i + 1] * 100) / 100,
     margin: Math.round(margin[i + 1] * 10000) / 100,
   }));
 
@@ -22,7 +23,7 @@ export default function SegmentChart({ launches, margin }) {
             yAxisId="left"
             tick={{ fontSize: 11 }}
             stroke="var(--navy-light)"
-            label={{ value: 'Launches', angle: -90, position: 'insideLeft', offset: 5, fontSize: 11 }}
+            label={{ value: primaryLabel, angle: -90, position: 'insideLeft', offset: 5, fontSize: 11 }}
           />
           <YAxis
             yAxisId="right"
@@ -40,7 +41,7 @@ export default function SegmentChart({ launches, margin }) {
               fontSize: '12px',
             }}
             formatter={(value, name) => {
-              if (name === 'launches') return [value, 'Annual Launches'];
+              if (name === primaryKey) return [value, primaryLabel];
               if (name === 'margin') return [`${value}%`, 'Operating Margin'];
               return value;
             }}
@@ -49,7 +50,7 @@ export default function SegmentChart({ launches, margin }) {
           <Line
             yAxisId="left"
             type="monotone"
-            dataKey="launches"
+            dataKey={primaryKey}
             stroke="var(--navy)"
             strokeWidth={2}
             dot={false}

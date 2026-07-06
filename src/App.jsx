@@ -436,7 +436,19 @@ export default function App() {
                 ))}
 
                 {panel.segment === 'Space' && (
-                  <SegmentChart launches={operating.space.launches} margin={operating.space.margin} />
+                  <SegmentChart primaryLabel="Launches" primaryData={operating.space.launches} margin={operating.space.margin} />
+                )}
+
+                {panel.segment === 'Connectivity' && (
+                  <SegmentChart primaryLabel="Subscribers" primaryData={operating.connectivity.subscribers} margin={operating.connectivity.margin} />
+                )}
+
+                {panel.segment === 'AI' && (
+                  <SegmentChart primaryLabel="Megawatts" primaryData={operating.ai.capacity} margin={operating.ai.margin} />
+                )}
+
+                {panel.segment === 'Expansion' && (
+                  <SegmentChart primaryLabel="Revenue" primaryData={operating.expansion.revenue} margin={operating.expansion.margin} />
                 )}
               </div>
             );
