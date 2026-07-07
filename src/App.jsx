@@ -213,12 +213,12 @@ export default function App() {
           <div>
             <div className="method-col__title">Model Methodology &amp; Mechanics</div>
             <p className="method-col__text">
-              A sum-of-the-parts valuation &mdash; Space, Connectivity, AI, and Expansion are each valued
+              A sum-of-the-parts valuation: Space, Connectivity, AI, and Expansion business segments are each valued
               independently, at their own cost of capital, rather than treating SpaceX as a single business with a
               single discount rate. Wherever possible, growth is grounded in what&apos;s actually disclosed; where it
               isn&apos;t &mdash; Expansion, the one segment representing products that don&apos;t exist yet &mdash;
-              it&apos;s priced as a convex, option-like payoff across Bear/Base/Bull scenarios rather than a single
-              guess.
+              it is priced as a convex, option-like payoff across Bear/Base/Bull scenarios rather than a single
+              estimate.
             </p>
             <p className="method-col__text">
               WACC uses a fixed capital structure weight rather than solving it live to avoid circularity.
