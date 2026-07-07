@@ -923,6 +923,11 @@ a {
     padding-right: 20px;
   }
 
+  .hero-col__price {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
   .segments-grid,
   .output-grid {
     grid-template-columns: 1fr;
