@@ -50,8 +50,16 @@ export function formatSliderValue(value, unit) {
 export function getSliderStep(min, max, unit) {
   if (unit === 'percent') return 0.0001;
   if (unit === 'year' || unit === 'years') return 0.1;
-  if (unit === 'count') return 1;
   if (unit === 'multiple' || unit === 'ratio') return 0.1;
+
+  if (unit === 'count' || unit === 'megawatts') {
+    const range = max - min;
+    const ideal = range / 200;
+    if (ideal >= 10) {
+      return Math.round(ideal / 10) * 10 || 10;
+    }
+    return Math.round(ideal) || 1;
+  }
 
   const range = max - min;
   const raw = range / 200;

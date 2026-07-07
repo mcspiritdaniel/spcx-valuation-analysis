@@ -633,24 +633,6 @@ a {
   font-size: 11px;
 }
 
-.slider-control__input {
-  width: 100%;
-  padding: 4px 6px;
-  margin-top: 4px;
-  font-size: 11px;
-  font-family: var(--font-mono);
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  color: var(--navy);
-  background: white;
-}
-
-.slider-control__input:focus {
-  outline: none;
-  border-color: var(--navy-light);
-  box-shadow: 0 0 0 2px rgba(25, 75, 140, 0.1);
-}
-
 /* ---- Capital Structure & Valuation Output ---- */
 
 .output-section {
