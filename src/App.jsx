@@ -340,9 +340,7 @@ export default function App() {
                 <tr>
                   <td className="roic-table__expansion-label">Expansion</td>
                   <td colSpan={3} className="roic-table__expansion-note">
-                    Expansion's reinvestment rate is defined as g &divide; WACC, not independently sourced &mdash; so
-                    ROIC<sub>ss</sub> equals WACC by construction. Spread here is a structural identity, not a
-                    forecast.
+                    Expansion's reinvestment rate is defined as g &divide; WACC, not independently sourced. ROIC<sub>ss</sub> equals WACC by construction. Spread here is a structural identity, not a forecast.
                     <br />
                     <span className="roic-table__ss-caption">ss = steady state</span>
                   </td>
