@@ -349,6 +349,12 @@ export default function App() {
                 </tr>
               </tbody>
             </table>
+            <p className="roic-reconciliation-note">
+              A positive ROIC<sub>ss</sub>–WACC spread reflects steady-state (mature) unit economics, not the full
+              valuation. A segment can still show negative Enterprise Value if the cost of reaching that mature
+              state—years of capex and low-margin buildout—outweighs its eventual payoff at this segment&apos;s cost of
+              capital.
+            </p>
           </div>
         </div>
       </section>
@@ -368,10 +374,10 @@ export default function App() {
                 <div className="segment-col__ev">{formatMoneyM(evValue)}</div>
                 <div className="segment-col__ev-label">Enterprise value</div>
 
-                {panel.segment === 'AI' && evValue < 0 && (
+                {evValue < 0 && (
                   <div className="segment-col__warning">
-                    At these settings, AI&apos;s expected returns don&apos;t cover its cost of capital &mdash; this
-                    segment is a net drag on equity value.
+                    At these settings, the expected returns do not cover the cost of capital, resulting in a net drag
+                    on equity value.
                   </div>
                 )}
 

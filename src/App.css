@@ -438,6 +438,15 @@ a {
   display: inline-block;
 }
 
+.roic-reconciliation-note {
+  font-size: 13px;
+  color: var(--navy-mid);
+  line-height: 1.5;
+  margin-top: 16px;
+  margin-bottom: 0;
+  font-family: var(--font-sans);
+}
+
 /* ---- Segment analysis ---- */
 
 .segments-section {
