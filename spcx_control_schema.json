@@ -726,7 +726,7 @@
       "range": {
         "min": 0.0,
         "max": 1.0,
-        "unit": "count"
+        "unit": "ratio"
       },
       "app_tier": "Advanced",
       "card_tier": "Fundamental",
@@ -1058,7 +1058,7 @@
       "range": {
         "min": 0.0,
         "max": 1.0,
-        "unit": "count"
+        "unit": "ratio"
       },
       "app_tier": "Advanced",
       "card_tier": "Advanced",
@@ -1342,7 +1342,7 @@
       "range": {
         "min": 0.0,
         "max": 1.0,
-        "unit": "count"
+        "unit": "ratio"
       },
       "app_tier": "Fundamental",
       "card_tier": "Fundamental",
