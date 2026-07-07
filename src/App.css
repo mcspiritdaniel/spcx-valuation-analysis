@@ -928,6 +928,10 @@ a {
     padding-bottom: 16px;
   }
 
+  .hero-col__label {
+    font-size: 9px;
+  }
+
   .segments-grid,
   .output-grid {
     grid-template-columns: 1fr;
