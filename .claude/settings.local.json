@@ -14,7 +14,26 @@
       "Bash(git commit -m 'Fix chart margin to display '\\\\''Launches'\\\\'' Y-axis label *)",
       "Bash(git commit -m 'Add dynamic charts to all segment cards *)",
       "Bash(git commit -m 'Format primary Y-axis values with commas for readability *)",
-      "Bash(git commit -m 'Update charts and footer formatting *)"
+      "Bash(git commit -m 'Update charts and footer formatting *)",
+      "Bash(git commit -m ' *)",
+      "Bash(gh pr create --title 'Improve chart display uniformity and legend formatting' --body ' *)",
+      "Bash(brew list *)",
+      "Bash(brew install *)",
+      "Bash(git commit -m 'Add comma formatting to chart tooltip values *)",
+      "Bash(git commit -m 'Update Model Methodology & Mechanics text description *)",
+      "Bash(git commit -m 'Update Connectivity segment description *)",
+      "Bash(git commit -m 'Update Expansion ROIC note in table *)",
+      "Bash(git commit -m 'Update ROIC reconciliation note *)",
+      "Bash(gh pr *)",
+      "Bash(find /usr -name \"gh\" -type f 2>/dev/null | head -5)",
+      "Bash(gh --version)",
+      "Bash(git commit -m 'Add vertical padding to hero price on mobile only *)",
+      "Bash(git commit -m 'Reorganize footnote text between hero and methodology sections *)",
+      "Bash(git commit -m 'Increase font size of hero label *)",
+      "Bash(git commit -m 'Further increase font size of hero label *)",
+      "Bash(git commit -m 'Restore original hero label size on mobile only *)",
+      "Bash(pkill -f \"vite\")",
+      "Bash(grep -r \"toFixed.*M\\\\|toFixed.*B\\\\|\\\\$\\\\|formatOverride\" /Users/danmcspirit/Documents/spcx-valuation-app/src --include=\"*.jsx\" --include=\"*.js\")"
     ]
   }
 }

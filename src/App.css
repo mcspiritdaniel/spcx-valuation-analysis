@@ -292,8 +292,8 @@ a {
 .vmi-grid-header,
 .vmi-grid-row {
   display: grid;
-  grid-template-columns: 170px 1fr 1fr 1fr 1fr;
-  padding: 8px 28px;
+  grid-template-columns: 170px repeat(4, minmax(0, 1fr));
+  padding: 12px 28px;
   border-bottom: 1px solid var(--border);
   align-items: center;
 }
@@ -322,7 +322,11 @@ a {
 
 .vmi-grid-row--wacc {
   background: var(--bg-subtle);
-  padding: 9px 28px;
+  padding: 16px 28px;
+}
+
+.vmi-grid-row--reinvest {
+  padding-bottom: 8px;
 }
 
 .vmi-grid-row--wacc > span:first-child {
@@ -336,6 +340,7 @@ a {
   align-items: center;
   gap: 2px;
   padding: 0 6px;
+  min-width: 100px;
 }
 
 .vmi-cell input[type='range'] {
@@ -367,6 +372,8 @@ a {
   font-size: 8px;
   color: var(--cat-label);
   margin-top: 3px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .vmi-col-roic {

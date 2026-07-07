@@ -1,5 +1,5 @@
 {
-  "source": "SPCX_McSpirit_Model_v10.xlsx / Control sheet",
+  "source": "SPCX_McSpirit_Model_v11.xlsx / Control sheet",
   "generated_fields": [
     "value",
     "range",
@@ -1457,14 +1457,14 @@
       "input_type": "slider",
       "range": {
         "min": 0.0,
-        "max": 0.5,
+        "max": 1.0,
         "unit": "percent"
       },
       "app_tier": "Advanced",
       "card_tier": "Advanced",
       "impact": "low",
       "note": "Applies once 90-day termination rights are active, 2027 onward. Expected-value haircut on Anthropic/Google contracted revenue and MW once termination rights are active (Anthropic early 2027, Google 1/1/27). Freed MW reverts to merchant/uncontracted demand at the market price, same mechanism as the Grok exclusion (Operating sheet AI revenue formula). 0% = full contractual term realized; 50% = severe churn risk.",
-      "raw_app_instruction": "App slider: Min 0%, Max 50%",
+      "raw_app_instruction": "App slider: Min 0%, Max 100%",
       "classification_missing": false
     },
     {
@@ -1762,7 +1762,8 @@
       "range": {
         "min": 25000.0,
         "max": 2000000.0,
-        "unit": "usd_millions"
+        "unit": "usd_millions",
+        "step": 5000
       },
       "app_tier": "Fundamental",
       "card_tier": "Fundamental",

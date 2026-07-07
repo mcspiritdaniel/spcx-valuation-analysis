@@ -43,7 +43,7 @@ function formatYears(value) {
 }
 
 function formatBillionsFromMillions(valueInMillions) {
-  return `$${Math.round(valueInMillions / 1000)}B`;
+  return `$${Math.round(valueInMillions / 1000).toLocaleString()}B`;
 }
 
 function byRow(controls, row) {
@@ -119,15 +119,15 @@ const SEGMENT_CATEGORY_LABEL_OVERRIDES = {
 };
 
 const SEGMENT_DESCRIPTIONS = {
-  Space: "Space combines a launch-volume S-curve — growth that accelerates, then tapers as the business approaches its ceiling — with a steadily rising price per launch, and margins that improve in step with how fast the business actually scales rather than on a fixed timeline. Because Space's revenue leans heavily on government launch contracts — the most stable, least market-sensitive part of the business — it carries the most conservative risk profile of the four segments, closer to a traditional aerospace contractor than a typical growth story.",
+  Space: "Space combines a launch-volume S-curve — growth that accelerates, then tapers as the business approaches its ceiling — with a steadily rising price per launch, and margins that improve in step with how fast the business actually scales rather than on a fixed timeline. Because Space's revenue leans heavily on government launch contracts which are the most stable, least market-sensitive part of the business it carries the most conservative risk profile of the four segments.",
   Connectivity: "Connectivity uses the same S-curve growth pattern as Space — subscribers ramping toward a ceiling — paired with per-subscriber revenue that gradually declines as the base matures, and a hardware-revenue layer that fades as fewer subscribers are buying their first terminal each year. It's treated as the most proven, lowest-risk segment of the four, reflecting the fastest subscriber scale-up of any satellite internet provider to date and it's the single largest driver of the company's total value.",
   AI: "AI combines the same S-curve capacity growth used across the other segments with something more concrete: a real split between contracted revenue from named, disclosed compute agreements and merchant revenue for whatever capacity isn't already spoken for, so expiring contracts automatically roll into re-priced capacity rather than requiring a separate assumption. It carries the least-proven risk profile of the three real segments, reflecting a competitive field with better-funded, more established rivals.",
   Expansion: "Expansion values future products that don't exist yet. It only starts contributing once Space, Connectivity, and AI have matured enough to support something built on top of them, weighted toward whichever platform the company is actually investing in most. Rather than a single estimate, three scenarios (bearish, base, bullish) are blended into one expected outcome, and growth fades gradually toward a steady pace using a phased-growth approach (H-model), reflecting a genuinely long investment horizon.",
 };
 
 function GridCell({ control, value, onChange }) {
-  const { min, max, unit } = control.range;
-  const step = getSliderStep(min, max, unit);
+  const { min, max, unit, step: schemaStep } = control.range;
+  const step = getSliderStep(min, max, unit, schemaStep);
   return (
     <div className="vmi-cell">
       <span className="vmi-cell__value">{formatSliderValue(value, unit)}</span>
@@ -224,9 +224,10 @@ export default function App() {
               WACC uses a fixed capital structure weight rather than solving it live to avoid circularity.
             </p>
             <p className="method-col__text">
-              Segment enterprise values are independent, but cash taxes are computed on consolidated EBIT (SpaceX
-              files one tax return, not four), so a change in one segment&apos;s inputs can slightly shift another
-              segment&apos;s after-tax cash flow via the shared effective tax rate.
+              Each segment&apos;s after-tax cash flow is not fully isolated, however: cash taxes are computed on
+              consolidated EBIT (SpaceX files one tax return, not four), so a change in one segment&apos;s inputs can
+              shift another&apos;s after-tax cash flow via the shared effective tax rate. A separate, and potentially much
+              larger, cross-segment effect exists for Expansion specifically. See its card for detail.
             </p>
           </div>
           <div className="method-col__footnote">Model defaults are starting values only &middot; All figures USD million unless noted</div>
@@ -260,9 +261,9 @@ export default function App() {
             <div className="vmi-grid-header">
               <div />
               <div>Space</div>
-              <div>Conn.</div>
+              <div>Connectivity</div>
               <div>AI</div>
-              <div>Exp.</div>
+              <div>Expansion</div>
             </div>
 
             <div className="vmi-grid-row">
@@ -289,7 +290,7 @@ export default function App() {
               })}
             </div>
 
-            <div className="vmi-grid-row">
+            <div className="vmi-grid-row vmi-grid-row--reinvest">
               <span>Terminal Reinvest. Rate</span>
               {[36, 37, 38].map((row) => {
                 const control = byRow(valuationInputs, row);
@@ -308,7 +309,7 @@ export default function App() {
           </div>
 
           <div className="vmi-col-roic">
-            <div className="vmi-group-title">ROIC vs. WACC &middot; Spread</div>
+            <div className="vmi-group-title">Steady State ROIC vs. WACC &middot; Spread</div>
             <table className="roic-table">
               <thead>
                 <tr>
@@ -440,19 +441,42 @@ export default function App() {
                 ))}
 
                 {panel.segment === 'Space' && (
-                  <SegmentChart segment="Space" primaryLabel="Launches" primaryData={operating.space.launches} margin={operating.space.margin} />
+                  <>
+                    <SegmentChart segment="Space" primaryLabel="Launches" primaryData={operating.space.launches} margin={operating.space.margin} />
+                    <div className="footnotes">
+                      <p>Note: raising Annual Cadence Target lifts Space's long-run revenue ceiling, but can slow near-term margin improvement. The model measures ramp progress as a fraction of the target, so a higher target makes the same launch volume represent less progress toward maturity.</p>
+                    </div>
+                  </>
                 )}
 
                 {panel.segment === 'Connectivity' && (
-                  <SegmentChart segment="Connectivity" primaryLabel="Subscribers" primaryData={operating.connectivity.subscribers} margin={operating.connectivity.margin} />
+                  <>
+                    <SegmentChart segment="Connectivity" primaryLabel="Subscribers" primaryData={operating.connectivity.subscribers} margin={operating.connectivity.margin} />
+                    <div className="footnotes">
+                      <p>Note: Hardware revenue decline rate is applied as a constant percentage of subscriber revenue each year, not a cumulative year-over-year decline. Its effect on 10-year hardware revenue is smaller than 'decline rate' might suggest.</p>
+                    </div>
+                  </>
                 )}
 
                 {panel.segment === 'AI' && (
-                  <SegmentChart segment="AI" primaryLabel="Megawatts" primaryData={operating.ai.capacity} margin={operating.ai.margin} />
+                  <>
+                    <SegmentChart segment="AI" primaryLabel="Megawatts" primaryData={operating.ai.capacity} margin={operating.ai.margin} />
+                    <div className="footnotes">
+                      <p>Note: at a low merchant Price per MW, increasing Contract Termination Risk can raise AI's value. Losing contracted revenue during AI's deeply negative-margin early years reduces near-term losses more than it costs in future merchant revenue.</p>
+                    </div>
+                  </>
                 )}
 
                 {panel.segment === 'Expansion' && (
-                  <SegmentChart segment="Expansion" primaryLabel="Revenue" primaryData={operating.expansion.revenue} margin={operating.expansion.margin} />
+                  <>
+                    <SegmentChart segment="Expansion" primaryLabel="Revenue" primaryData={operating.expansion.revenue} margin={operating.expansion.margin} />
+                    <div className="footnotes">
+                      <p>Note: Space and AI's segment weightings are linked — increasing one reduces the other's available range. Connectivity's weight is the residual (100% − Space − AI), which must stay between 0% and 100% to remain meaningful.</p>
+                    </div>
+                    <div className="footnotes">
+                      <p>Note: Expansion's Revenue = a weighted composite of Space, Connectivity, and AI's realization curves — this does depend on the segment weightings above. Expansion's Margin = blended dollar EBIT ÷ dollar revenue across all three segments — this does not depend on weighting at all. Even at 0% AI weighting, a large change in AI's absolute profitability can still meaningfully shift Expansion's margin and value.</p>
+                    </div>
+                  </>
                 )}
               </div>
             );

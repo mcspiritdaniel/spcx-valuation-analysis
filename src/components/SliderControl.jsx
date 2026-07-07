@@ -1,8 +1,8 @@
 import { formatSliderValue, getSliderStep } from '../utils/schema';
 
 export default function SliderControl({ control, value, onChange, formatOverride }) {
-  const { min, max, unit } = control.range;
-  const step = getSliderStep(min, max, unit);
+  const { min, max, unit, step: schemaStep } = control.range;
+  const step = getSliderStep(min, max, unit, schemaStep);
   const displayValue = formatOverride ? formatOverride(value) : formatSliderValue(value, unit);
 
   return (

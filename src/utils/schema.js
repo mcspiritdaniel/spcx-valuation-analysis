@@ -29,9 +29,9 @@ export function formatSliderValue(value, unit) {
     case 'multiple':
       return value.toFixed(2);
     case 'usd':
-      return `$${value.toFixed(0)}`;
+      return `$${Number(value.toFixed(0)).toLocaleString()}`;
     case 'usd_millions':
-      return `$${value.toFixed(0)}M`;
+      return `$${Number(value.toFixed(0)).toLocaleString()}M`;
     case 'millions':
       return `${value.toFixed(0)}M`;
     case 'megawatts':
@@ -47,7 +47,8 @@ export function formatSliderValue(value, unit) {
   }
 }
 
-export function getSliderStep(min, max, unit) {
+export function getSliderStep(min, max, unit, step) {
+  if (step !== undefined) return step;
   if (unit === 'percent') return 0.0001;
   if (unit === 'year' || unit === 'years') return 0.1;
   if (unit === 'multiple') return 0.1;
