@@ -350,7 +350,7 @@ export default function App() {
             <p className="roic-reconciliation-note">
               A positive ROIC<sub>ss</sub>–WACC spread reflects steady-state (mature) unit economics, not the full
               valuation. A segment can still show negative Enterprise Value if the cost of reaching that mature
-              state—years of capex and low-margin buildout—outweighs its eventual payoff at this segment&apos;s cost of
+              state — years of capex and low-margin buildout, for example — outweighs its eventual payoff at this segment&apos;s cost of
               capital.
             </p>
           </div>
