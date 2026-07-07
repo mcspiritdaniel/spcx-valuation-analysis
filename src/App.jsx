@@ -207,7 +207,7 @@ export default function App() {
           <div>
             <div className="hero-col__price">{perShareFormat.format(perShareRounded)}</div>
           </div>
-          <div className="hero-col__footnote">All figures USD million unless noted &middot; Not investment advice</div>
+          <div className="hero-col__footnote">Not investment advice</div>
         </div>
         <div className="method-col">
           <div>
@@ -229,7 +229,7 @@ export default function App() {
               segment&apos;s after-tax cash flow via the shared effective tax rate.
             </p>
           </div>
-          <div className="method-col__footnote">Model defaults are starting values only &middot; Inputs have varying degrees of impact</div>
+          <div className="method-col__footnote">Model defaults are starting values only &middot; All figures USD million unless noted</div>
         </div>
       </section>
 
