@@ -570,7 +570,7 @@ export default function App() {
           <a href="https://www.linkedin.com/in/danmcspirit" target="_blank" rel="noreferrer">Dan McSpirit &#8599;</a>
         </div>
         <span className="app-footer__center">For informational purposes only &middot; Not investment advice</span>
-        <span className="app-footer__right">July 2025</span>
+        <span className="app-footer__right">July 2026</span>
       </footer>
     </div>
   );
