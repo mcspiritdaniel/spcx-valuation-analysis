@@ -197,7 +197,7 @@ export default function App() {
         <div className="navbar__right">
           <span className="navbar__label">Valuation Analysis</span>
           <button className="reset-btn" onClick={resetToDefaults}>Reset to model defaults</button>
-          <a className="navbar__link" href="https://www.linkedin.com/in/danmcspirit" target="_blank" rel="noreferrer">Dan McSpirit &#8599;</a>
+          <a className="navbar__link" href="https://danmcspirit.com" target="_blank" rel="noreferrer">Dan McSpirit &#8599;</a>
         </div>
       </nav>
 
@@ -567,7 +567,7 @@ export default function App() {
 
       <footer className="app-footer">
         <div className="app-footer__left">
-          <a href="https://www.linkedin.com/in/danmcspirit" target="_blank" rel="noreferrer">Dan McSpirit &#8599;</a>
+          <a href="https://danmcspirit.com" target="_blank" rel="noreferrer">Dan McSpirit &#8599;</a>
         </div>
         <span className="app-footer__center">For informational purposes only &middot; Not investment advice</span>
         <span className="app-footer__right">July 2026</span>
