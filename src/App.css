@@ -1032,6 +1032,8 @@ a {
   /* Hide main content */
   .hero-row,
   .method-col,
+  .vmi-heading,
+  .vmi-columns,
   .segments-section,
   .output-section,
   .app-footer {
