@@ -201,6 +201,15 @@ export default function App() {
         </div>
       </nav>
 
+      <div className="mobile-notice">
+        <div className="mobile-notice__wordmark">SPCX</div>
+        <h1 className="mobile-notice__heading">Best Viewed on Desktop</h1>
+        <p className="mobile-notice__text">
+          This is a dense, interactive sum-of-the-parts valuation model with 60+ adjustable assumptions across a two-pane layout. It's built for a larger screen — please revisit on a desktop or laptop for the full experience.
+        </p>
+        <a href="https://danmcspirit.com" target="_blank" rel="noreferrer" className="mobile-notice__link">Dan McSpirit ↗</a>
+      </div>
+
       <section className="hero-row">
         <div className="hero-col">
           <div className="hero-col__label">Equity Value &middot; Per Share &middot; Rounded to Nearest USD</div>
