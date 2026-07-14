@@ -1019,6 +1019,7 @@ a {
   .mobile-notice__link {
     font-family: var(--font-sans);
     font-size: 12px;
+    font-weight: 400;
     color: var(--navy-mid);
     text-decoration: underline;
     text-decoration-thickness: 1px;
