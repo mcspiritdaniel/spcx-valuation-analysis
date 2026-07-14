@@ -207,7 +207,7 @@ export default function App() {
         <p className="mobile-notice__text">
           This is a dense, interactive sum-of-the-parts valuation model with 60+ adjustable assumptions across a two-pane layout. It's built for a larger screen — please revisit on a desktop or laptop for the full experience.
         </p>
-        <a href="https://danmcspirit.com" target="_blank" rel="noreferrer" className="mobile-notice__link">Dan McSpirit &#8599;</a>
+        <a href="https://danmcspirit.com" target="_blank" rel="noreferrer" className="mobile-notice__link">Dan McSpirit <span className="mobile-notice__arrow">&#8599;</span></a>
       </div>
 
       <section className="hero-row">
