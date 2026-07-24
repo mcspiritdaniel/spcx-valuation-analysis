@@ -10,6 +10,7 @@
     "validate": "node scripts/validate-golden-case.mjs"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "recharts": "^3.9.2"

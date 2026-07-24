@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import SliderControl from './components/SliderControl';
 import SegmentChart from './components/SegmentChart';
 import { useValuationEngine } from './hooks/useValuationEngine';
@@ -581,6 +582,7 @@ export default function App() {
         <span className="app-footer__center">For informational purposes only &middot; Not investment advice</span>
         <span className="app-footer__right">July 2026</span>
       </footer>
+      <Analytics />
     </div>
   );
 }
